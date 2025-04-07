@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+// Generic function to find the maximum element in an array
+template <typename T>
+T findMax(T arr[], int size) {
+    T max = arr[0];
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int main() {
+    // Test with int array
+    int intArray[] = {3, 7, 2, 9, 5};
+    int intSize = sizeof(intArray) / sizeof(intArray[0]);
+    std::cout << "Max (int): " << findMax(intArray, intSize) << std::endl;
+
+    // Test with double array
+    double doubleArray[] = {3.14, 2.71, 6.28, 1.61};
+    int doubleSize = sizeof(doubleArray) / sizeof(doubleArray[0]);
+    std::cout << "Max (double): " << findMax(doubleArray, doubleSize) << std::endl;
+
+    // Test with string array
+    std::string stringArray[] = {"apple", "orange", "banana", "peach"};
+    int stringSize = sizeof(stringArray) / sizeof(stringArray[0]);
+    std::cout << "Max (string): " << findMax(stringArray, stringSize) << std::endl;
+
+    return 0;
+}
